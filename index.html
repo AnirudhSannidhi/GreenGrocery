@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:rgb(0,128,55);
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: w;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: white;
+  color: white;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+ 
+}
+* {
+  box-sizing: border-box;
+}
+
+.topnav.form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 50%;
+  background: #f1f1f1;
+}
+
+.topnav.form.example button {
+  float: left;
+  width: 5%;
+  padding: 0;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.topnav.form.example button:hover {
+  background: #0b7dda;
+}
+
+.topnav.form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+
+
+<!--Carousel-->
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  position: relative;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body background="Images/background for all.png">
+    <div class="topnav" style="padding-left: 50px;">
+        <p style="color:white;font-size: x-large;"><strong>Green Grocery</strong></p>
+        <form class="example">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <a href="Webpages/About.html" style="color:whitesmoke; padding-right: 50px;">About</a>
+          <a href="Webpages/Contact.html" style="color:whitesmoke; padding-right: 50px;">Contact</a>
+          <a href="Webpages/Category.html" style="color:whitesmoke; padding-right: 50px; ">Category</a> 
+          <a class="active" href="index.html"  style="color:rgb(0,128,55); padding-right: 50px;">Home</a>
+          
+    </div>
+<div class="slideshow-container" style="padding-top: 10px;">
+
+<div class="mySlides">
+<img src="Images/Carousel-1.png" style="width: 1550px;height: 500px;">
+ 
+</div>
+
+<div class="mySlides">
+<img src="Images/Carousel-2.png" style="width: 1550px;height: 500px;">
+
+</div>
+
+<div class="mySlides">
+<img src="Images/Carousel-3.png" style="width: 1550px;height: 500px;">
+
+</div>
+
+<div class="mySlides">
+<img src="Images/Carousel-4.png" style="width: 1550px;height: 500px;">
+
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<!--Cards-->
+<style>
+*
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 30px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.green-button{
+            background-color: #04AA6D;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            }
+</style>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="Images/fruits.jpg" style="height: 120px; width: 120px;">
+      <p>Fruits</p>
+      <a href="Webpages/Fruit.html" class="green-button">See more</a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="Images/Vegetables.jpg" style="height: 120px; width: 120px;">
+      <p>Vegetables</p>
+      <a href="Webpages/Vegetable.html" class="green-button">See more</a>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="Images/beverages.jpg" style="height: 120px; width: 120px;">
+      <p>Beverages</p>
+      <a href="Webpages/Beverages.html" class="green-button">See more</a>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="Images/daily use items.jpg" style="height: 120px; width: 120px;">
+      <p>Daily Staples</p>
+      <a href="Webpages/Daily Staple.html" class="green-button">See more</a>
+    </div>
+  </div>
+     <br> 
+    <div class="column" style="padding-top: 10px;">
+    <div class="card">
+      <img src="Images/Personal care.jpg" style="height: 120px; width: 120px;">
+      <p>Personal Care</p>
+      <a href="Webpages/Personal Care.html" class="green-button">See more</a>
+    </div>
+</div>
+</div>
+
+<!--Footer-->
+<footer style="padding-left: 50px; background-color: rgb(0,128,55); height: 145px;">
+  <p style="padding: 10px; color: white;">Author: Anirudh Sannidhi<br>
+  <img src="Footer links/Gmail.png" style="height: 20px; width: 20px;"><a style="color: white;" href="#MailID">E-mail</a><br>
+  <img src="Footer links/Facebook.jpg" style="height: 20px; width: 20px;"><a style="color: white;" href="#Facebook">Facebook</a><br>
+  <img src="Footer links/Insta.png" style="height: 20px; width: 20px;"><a style="color: white;" href="#Instagram">Instagram</a>
+  <p style="text-align: center; color: white;">Created by Anirudh Sannidhi© All Rights Reserved 2022</p>
+</p>
+</footer>
+
+</body>
+</html>
